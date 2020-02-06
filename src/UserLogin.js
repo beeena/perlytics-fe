@@ -9,8 +9,8 @@ class UserLogin extends Component {
         profile: '',
         userInfo:null
     }
+
     static getDerivedStateFromProps(props, state){
-        console.log('state',state)
         if(state.userInfo == null){
             const user = JSON.parse(localStorage.getItem('userData'));
             console.log('user',user)
@@ -18,10 +18,9 @@ class UserLogin extends Component {
                 userInfo:user
             }
         }
-       
     }
+
     LoginResponse=(response)=> {
-        console.log('response', response.profileObj);
         const profileObj = response.profileObj;
         const name = profileObj.name;
         const email = profileObj.email;
@@ -36,7 +35,8 @@ class UserLogin extends Component {
       
     }
     render() {
-        if(!this.state.userInfo) {
+        const {userInfo} = this.state;
+        if(!userInfo) {
             return (
             
             <div style={{marginLeft: '20px'}}>
@@ -56,10 +56,10 @@ class UserLogin extends Component {
                     marginLeft: '20px'
                 }}
             >
-                <img src={this.state.userInfo && this.state.userInfo.userImage}/>
+                <img src={userInfo && userInfo.userImage}/>
                 <div style={{padding: '0 12px'}}>
-                    <p style={{fontWeight: 'bold'}}>{this.state.userInfo && this.state.userInfo.name}</p>
-                <p style={{fontWeight: 'normal'}}> {this.state.userInfo && this.state.userInfo.email}</p>
+                    <p style={{fontWeight: 'bold'}}>{userInfo && userInfo.name}</p>
+                <p style={{fontWeight: 'normal'}}> {userInfo && userInfo.email}</p>
                     
                 </div>
             </div>

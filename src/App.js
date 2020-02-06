@@ -55,7 +55,6 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h3>Login with Google</h3>
         <UserLogin />
         <h3>Time Period Options</h3>
         <TimeMenu />
