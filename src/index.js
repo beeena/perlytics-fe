@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import MobileApp from './MobileApp';
+import GoogleLogin from './GoogleLogin';
 import Domain from './Domain';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
-
 const routing = (
   <Router>
     <div>
@@ -20,6 +20,7 @@ const routing = (
       </ul>
       <Route exact path="/" component={App} />
       <Route path="/app/:id" component={MobileApp} />
+      <Route path="/login" component={GoogleLogin}/>
       <Route path="/domain/:id" component={Domain} />
     </div>
   </Router>

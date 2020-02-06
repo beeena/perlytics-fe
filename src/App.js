@@ -10,6 +10,7 @@ import SimplePieChart from './SimplePieChart'
 import SimplePieChart2 from './SimplePieChart2'
 import SimpleTable from './SimpleTable'
 import SimpleTableDomains from './SimpleTableDomains'
+import UserLogin from './UserLogin'
 
 class App extends Component {
     state = {
@@ -54,6 +55,8 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+        <h3>Login with Google</h3>
+        <UserLogin />
         <h3>Time Period Options</h3>
         <TimeMenu />
         <TimeSelect  cbTimeInterval={this.cbTimeInterval} />
